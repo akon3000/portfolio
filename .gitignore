@@ -1,7 +1,7 @@
 # Folder
 .next/
 .vscode/
-out/
+# out/
 node_modules/
 
 # Lock file
