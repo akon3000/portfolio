@@ -1,8 +1,13 @@
+import styled from 'styled-components'
 import Portal from '../Portal'
+
+const Wrapper = styled('div')`
+  background-color: red;
+`
 
 const Header = () => (
   <Portal>
-    <div>Header</div>
+    <Wrapper>Header</Wrapper>
   </Portal>
 )
 
