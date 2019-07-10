@@ -1,7 +1,8 @@
 # Folder
 .next/
 .vscode/
-# out/
+.firebase/
+out/
 node_modules/
 
 # Lock file

@@ -3,7 +3,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "export": "yarn build && next export",
+    "examples": "cd 'out' && python -m SimpleHTTPServer 8080"
   },
   "dependencies": {
     "next": "^9.0.0",
