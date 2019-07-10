@@ -62,7 +62,6 @@ function (_Component) {
   }, {
     key: "setupPortal",
     value: function setupPortal() {
-      // document variable can access after componentDidMount()
       this.body = document.body;
       this.element = document.createElement('div');
     }
@@ -91,4 +90,4 @@ function (_Component) {
 /***/ })
 
 })
-//# sourceMappingURL=index.js.6fc4d26be4522ef8f1fa.hot-update.js.map
+//# sourceMappingURL=index.js.35049c64879cd03d6a5d.hot-update.js.map

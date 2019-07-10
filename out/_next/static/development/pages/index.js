@@ -145,7 +145,6 @@ function (_Component) {
   }, {
     key: "setupPortal",
     value: function setupPortal() {
-      // document variable can access after componentDidMount()
       this.body = document.body;
       this.element = document.createElement('div');
     }
