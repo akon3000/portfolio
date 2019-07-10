@@ -2,9 +2,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "example": "next start",
-    "export": "next export",
-    "start": "cd 'out' && python -m SimpleHTTPServer 8080"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
     "next": "^9.0.0",

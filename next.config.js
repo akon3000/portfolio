@@ -1,4 +1,6 @@
+const prefixPath = process.env.NODE_ENV === 'production' ? '/portfolio/out/' : ''
+
 module.exports = {
-  assetPrefix: '/portfolio/out/',
+  assetPrefix: prefixPath,
   plugins: ['babel-plugin-styled-components']
 }
