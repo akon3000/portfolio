@@ -1,0 +1,10 @@
+# Folder
+.next/
+out/
+node_modules/
+
+# Lock file
+yarn.lock
+
+# File etc
+.DS_Store
