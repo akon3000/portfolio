@@ -4,6 +4,7 @@
 .firebase/
 out/
 node_modules/
+static/black
 
 # Lock file
 yarn.lock
