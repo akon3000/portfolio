@@ -34,17 +34,8 @@ class AppDocument extends Document {
 
           {/* <link rel='shortcut icon' href='favicon.ico' /> */}
 
-          {/** Google fonts */}
-          <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' />
-
-          {/** Animate.css */}
-          <link rel='stylesheet' href='css/animate.css' />
-          {/** Icomoon Icon Fonts */}
-          <link rel='stylesheet' href='css/icomoon.css' />
-          {/** Simple Line Icons */}
-          <link rel="stylesheet" href='css/simple-line-icons.css' />
-          {/** Bootstrap */}
-          <link rel="stylesheet" href='css/bootstrap.css' />
+          {/** Fonts */}
+          <link href='https://fonts.googleapis.com/css?family=Krub&display=swap' rel='stylesheet' />
 
         </Head>
         <body>
