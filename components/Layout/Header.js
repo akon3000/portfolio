@@ -1,11 +1,11 @@
-import { Component } from 'react'
+import React, { useState } from 'react'
 import styled, { createGlobalStyle, css } from 'styled-components'
 import { menuType } from '../../constants/header'
 import Portal from '../Portal'
 
 const GlobalHeaderStyle = createGlobalStyle`
   body {
-    padding-left: ${({ space }) => `${space}px`};
+    padding-left: ${({ contentWidth }) => `${contentWidth}px`};
   }
 `
 
@@ -39,39 +39,32 @@ const Wrapper = styled('header')`
   z-index: 999999;
 `
 
-class Header extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      space: 0,
-      active: menuType.home
-    }
+const Header = () => {
+  const [contentWidth, setContentWidth] = useState(0)
+  const [activeSection, setActiveSection] = useState(menuType.home)
+  const setGlobalStyle = el => {
+    if (!el) return
+    setContentWidth(el.clientWidth)
   }
 
-  setGlobalStyle = el => this.setState({ space: el.clientWidth })
-
-  handleActiveMenu = type => this.setState({ active: type })
-
-  render() {
-    return (
-      <Portal>
-        <GlobalHeaderStyle space={this.state.space} />
-        <Wrapper ref={this.setGlobalStyle}>
+  return (
+    <Portal>
+        <GlobalHeaderStyle contentWidth={contentWidth} />
+        <Wrapper ref={setGlobalStyle}>
           <Navigator>
             {
               Object.keys(menuType).map(type => (
                 <BulletLink
                   key={type}
-                  isActive={this.state.active === menuType[type]}
-                  onClick={() => this.handleActiveMenu(menuType[type])}
+                  isActive={activeSection === menuType[type]}
+                  onClick={() => setActiveSection(menuType[type])}
                 />
               ))
             }
           </Navigator>
         </Wrapper>
       </Portal>
-    )
-  }
+  )
 }
 
 export default Header

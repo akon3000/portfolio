@@ -1,8 +1,9 @@
 import Layout from '../components/Layout'
+import SectionHome from '../components/SectionHome'
 
 const Index = ({ title }) => (
   <Layout title={title}>
-    Tony Hello
+    <SectionHome />
   </Layout>
 )
 
