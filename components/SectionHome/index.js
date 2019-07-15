@@ -1,22 +1,44 @@
 import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
+import BgImage from '../BgImage'
 
-const SectionHome = styled('section')`
-  background-color: red;
-  ${({ contentHeight = 0 }) => css`height: ${contentHeight}px;`}
+const HeadText = styled('h1')`
+  font-size: 60px;
+`
+
+const HeadSubText = styled('h3')`
+  font-weight: 300;
+`
+
+const Wrapper = styled('section')`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  ${({ contentHeight }) => css`height: ${contentHeight}px;`}
 `
 
 const HomeSection = () => {
-  const [contentHeight, setContentHeight] = useState(0)
+  const [contentHeight, setContentHeight] = useState(1080)
 
   useEffect(() => {
     setContentHeight(window.innerHeight)
+    document.addEventListener('resize', () => setContentHeight(window.innerHeight))
   })
 
   return (
-    <SectionHome contentHeight={contentHeight}>
-      Test
-    </SectionHome>
+    <Wrapper contentHeight={contentHeight}>
+      <BgImage
+        opacity={0.5}
+        featherColor='#000'
+        src='/static/image/section-home-bg.jpg'
+      />
+      <HeadText>Tony - Portfolio</HeadText>
+      <HeadSubText>I am <u>Front-End</u> developer. Currently i'm working with NodeJs,React (Main)</HeadSubText>
+      <HeadSubText>...</HeadSubText>
+      <HeadSubText>But for <u>Back-End</u> & <u>Dev-ops</u> i can do some framework.</HeadSubText>
+    </Wrapper>
   )
 }
 

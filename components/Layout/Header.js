@@ -10,15 +10,17 @@ const GlobalHeaderStyle = createGlobalStyle`
 `
 
 const BulletLink = styled('a')`
-  width: 15px;
-  height: 15px;
-  margin: 15px 0;
+  width: 12px;
+  height: 12px;
+  margin: 15px 2px;
   cursor: pointer;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
   ${({ isActive }) => isActive && css`
     width: 16px;
     height: 16px;
+    border: 0;
+    margin: 15px 0;
     background-color: #FFF;
   `}
 `
