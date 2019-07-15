@@ -8,6 +8,7 @@ const BgImage = styled('div')`
   bottom: 0;
   z-index: -1;
   background: url(${({ src }) => src});
+  background-color: #000;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;

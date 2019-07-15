@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Link from 'next/link'
 import styled, { createGlobalStyle, css } from 'styled-components'
 import { menuType } from '../../constants/header'
 import Portal from '../Portal'
@@ -56,11 +57,12 @@ const Header = () => {
           <Navigator>
             {
               Object.keys(menuType).map(type => (
-                <BulletLink
-                  key={type}
-                  isActive={activeSection === menuType[type]}
-                  onClick={() => setActiveSection(menuType[type])}
-                />
+                <Link smooth key={type} href={menuType[type]}>
+                  <BulletLink
+                    isActive={activeSection === menuType[type]}
+                    onClick={() => setActiveSection(menuType[type])}
+                  />
+                </Link>
               ))
             }
           </Navigator>

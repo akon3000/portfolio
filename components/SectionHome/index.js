@@ -28,7 +28,7 @@ const HomeSection = () => {
   })
 
   return (
-    <Wrapper contentHeight={contentHeight}>
+    <Wrapper id='home' contentHeight={contentHeight}>
       <BgImage
         opacity={0.5}
         featherColor='#000'
