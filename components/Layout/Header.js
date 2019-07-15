@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react'
 import styled, { createGlobalStyle, css } from 'styled-components'
 import { menuType } from '../../constants/header'
 import Portal from '../Portal'
@@ -50,6 +49,19 @@ const Header = () => {
     setContentWidth(el.clientWidth)
   }
 
+  const handleActiveBullet = type => {
+    setActiveSection(menuType[type])
+    const section = document.querySelector(menuType[type])
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: 'smooth'
+    })
+  }
+
+  useEffect(() => {
+   
+  })
+
   return (
     <Portal>
         <GlobalHeaderStyle contentWidth={contentWidth} />
@@ -57,12 +69,11 @@ const Header = () => {
           <Navigator>
             {
               Object.keys(menuType).map(type => (
-                <Link smooth key={type} href={menuType[type]}>
-                  <BulletLink
-                    isActive={activeSection === menuType[type]}
-                    onClick={() => setActiveSection(menuType[type])}
-                  />
-                </Link>
+                <BulletLink
+                  key={type}
+                  isActive={activeSection === menuType[type]}
+                  onClick={() => handleActiveBullet(type)}
+                />
               ))
             }
           </Navigator>
