@@ -1,4 +1,5 @@
-import { createGlobalStyle,  } from 'styled-components'
+import { createGlobalStyle } from 'styled-components'
+import { headerSize } from '../../constants/header'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -11,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     color: #FFF;
-    padding-left: 116px;
     background-color: #000;
+    padding-left: ${headerSize}px;
     font-family: 'icomoon', sans-serif;
   }
 
@@ -20,6 +21,10 @@ const GlobalStyle = createGlobalStyle`
   body,
   p {
     margin: 0;
+  }
+
+  .text-pink {
+    color: #EC9191;
   }
 `
 
