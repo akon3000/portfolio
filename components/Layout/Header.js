@@ -1,13 +1,6 @@
-import React, { useState, useEffect } from 'react'
-import styled, { createGlobalStyle, css } from 'styled-components'
-import { menuType } from '../../constants/header'
+import styled, { css } from 'styled-components'
+import { bulletList } from '../../constants/header'
 import Portal from '../Portal'
-
-const GlobalHeaderStyle = createGlobalStyle`
-  body {
-    padding-left: ${({ contentWidth }) => `${contentWidth}px`};
-  }
-`
 
 const BulletLink = styled('a')`
   width: 12px;
@@ -41,45 +34,22 @@ const Wrapper = styled('header')`
   z-index: 999999;
 `
 
-const Header = () => {
-  const [contentWidth, setContentWidth] = useState(0)
-  const [activeSection, setActiveSection] = useState(menuType.home)
-  const setGlobalStyle = el => {
-    if (!el) return
-    setContentWidth(el.clientWidth)
-  }
-
-  const handleActiveBullet = type => {
-    setActiveSection(menuType[type])
-    const section = document.querySelector(menuType[type])
-    window.scrollTo({
-      top: section.offsetTop,
-      behavior: 'smooth'
-    })
-  }
-
-  useEffect(() => {
-   
-  })
-
-  return (
-    <Portal>
-        <GlobalHeaderStyle contentWidth={contentWidth} />
-        <Wrapper ref={setGlobalStyle}>
-          <Navigator>
-            {
-              Object.keys(menuType).map(type => (
-                <BulletLink
-                  key={type}
-                  isActive={activeSection === menuType[type]}
-                  onClick={() => handleActiveBullet(type)}
-                />
-              ))
-            }
-          </Navigator>
-        </Wrapper>
-      </Portal>
-  )
-}
+const Header = ({ activeSection, onSelectBullet }) => (
+  <Portal>
+      <Wrapper>
+        <Navigator>
+          {
+            Object.keys(bulletList).map(type => (
+              <BulletLink
+                key={type}
+                onClick={() => onSelectBullet(type)}
+                isActive={activeSection === bulletList[type]}
+              />
+            ))
+          }
+        </Navigator>
+      </Wrapper>
+    </Portal>
+)
 
 export default Header

@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     color: #FFF;
+    padding-left: 116px;
     background-color: #000;
     font-family: 'icomoon', sans-serif;
   }
