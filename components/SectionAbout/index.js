@@ -55,19 +55,25 @@ const DescriptionList = styled('ul')`
       ${pinkPrimary};
       position: relative;
       margin-right: 10px;
-      font-size: 6px;
+      font-size: 8px;
       display: flex;
       justify-content: center;
       &::before {
         content: "";
         width: 1px;
         position: absolute;
-        top: 1px;
+        top: 2px;
         bottom: 0;
-        left: 3.4px;
+        left: 3px;
         background-color: #EC9191;
       }
+      & > :last-child {
+        padding-bottom: 20px;
+      }
     }
+  }
+  & > li:last-child > :last-child {
+    padding-bottom: 0 !important;
   }
 `
 
@@ -121,7 +127,7 @@ const AboutSection = ({ id, profile, profile: { nickName: [ton, tony] } }) => (
                 <p>
                   <Icon name='circle' />
                 </p>
-                <p>
+                <p style={{ paddingBottom: 20 }}>
                   <b>{exp.company}</b>
                   <br />
                   <small>{exp.period}</small>
