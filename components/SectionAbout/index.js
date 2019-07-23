@@ -1,20 +1,31 @@
 import styled from 'styled-components'
-import { Icon } from 'semantic-ui-react'
 import { pinkPrimary } from '../../css/Colors'
 
 const TonyImage = styled('img')`
   width: 100%;
   height: auto;
-  opacity: 0.7;
   display: block;
   border-radius: 20px;
 `
 
-const ContentLeft = styled('div')`
-  width: 450px;
-  min-width: 300px;
+const OverlayImage = styled('div')`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
   border-radius: 20px;
-  box-shadow: 10px 10px 20px 0 #000, -10px -10px 20px 0 #000;
+  box-shadow: 40px 40px 40px 0 #000 inset,
+              -40px -40px 40px 0 #000 inset;
+`
+
+const ContentLeft = styled('div')`
+  position: relative;
+  width: 350px;
+  min-width: 350px;
+  border-radius: 20px;
+  margin-bottom: 40px;
 `
 
 const ContentRight = styled('div')`
@@ -31,7 +42,6 @@ const TextTitle = styled('p')`
 `
 
 const BoxDetail = styled('div')`
-  display: flex;
   margin-bottom: 30px;
 `
 
@@ -39,6 +49,8 @@ const Wrapper = styled('section')`
   background-color: #0E1415;
   padding: 100px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   box-shadow: 50px 50px 50px 0 #000 inset,
               -50px -50px 50px 0 #000 inset;
 `
@@ -46,49 +58,35 @@ const Wrapper = styled('section')`
 const AboutSection = ({ profile, profile: { nickName: [ton, tony] } }) => (
   <Wrapper id='about'>
     <ContentLeft>
-      <TonyImage src='/static/image/section-about-tony.jpg' />
+      <TonyImage src={profile.picture} />
+      <OverlayImage />
     </ContentLeft>
     <ContentRight>
       <BoxDetail>
-        <TextTitle>
-          <Icon name='smile outline' />
-        </TextTitle>
-        <div>
-          <TextTitle>Myself</TextTitle>
-          <p>
-            My name is <u>Mr.{profile.firstName} {profile.lastName}</u> i am {profile.year} years old. And for my nickname you can call me <u>{ton}</u> or <u>{tony}</u>.
-          </p>
-        </div>
+        <TextTitle>Myself</TextTitle>
+        <p>
+          My name is <u>Mr.{profile.firstName} {profile.lastName}</u> i am {profile.year} years old. And for my nickname you can call me <u>{ton}</u> or <u>{tony}</u>.
+        </p>
       </BoxDetail>
       <BoxDetail>
-        <TextTitle>
-          <Icon name='list' />
-        </TextTitle>
-        <div>
-          <TextTitle>Introduce</TextTitle>
-          <ul style={{ paddingLeft: 15 }}>
-            {
-              profile.introduces.map((introduce, index) => (
-                <li key={index}>{introduce}</li>
-              ))
-            }
-          </ul>
-        </div>
+        <TextTitle>Introduce</TextTitle>
+        <ul style={{ paddingLeft: 15 }}>
+          {
+            profile.introduces.map((introduce, index) => (
+              <li key={index}>{introduce}</li>
+            ))
+          }
+        </ul>
       </BoxDetail>
       <BoxDetail>
-        <TextTitle>
-          <Icon name='pencil alternate' />
-        </TextTitle>
-        <div>
-          <TextTitle>Work Experience</TextTitle>
-          <ul style={{ paddingLeft: 15 }}>
-            {
-              profile.workExperience.map((exp, index) => (
-                <li key={index}>{exp}</li>
-              ))
-            }
-          </ul>
-        </div>
+        <TextTitle>Work Experience</TextTitle>
+        <ul style={{ paddingLeft: 15 }}>
+          {
+            profile.workExperience.map((exp, index) => (
+              <li key={index}>{exp}</li>
+            ))
+          }
+        </ul>
       </BoxDetail>
     </ContentRight>
   </Wrapper>

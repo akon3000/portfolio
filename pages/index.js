@@ -15,6 +15,7 @@ Index.getInitialProps = () => {
     profile: {
       firstName: 'Tinnapop',
       lastName: 'Suraphon',
+      picture: '/static/image/section-about-tony.jpg',
       year: 27,
       nickName: ['Ton', 'Tony'],
       introduces: [
@@ -25,10 +26,10 @@ Index.getInitialProps = () => {
         'Actually i like many things.'
       ],
       workExperience: [
-        'D.T.C. ENTERPRISE Co.,Ltd | 1 (year)',
-        'Aksorn Education Public Company Limited, | 1 (year)',
-        'Elite digital studio | 4 (mounts)',
-        'Thomson Reuters | 6 (mounts)',
+        'D.T.C. ENTERPRISE Co.,Ltd | 1 year',
+        'Aksorn Education Public Company Limited, | 1 year',
+        'Elite digital studio | 4 mounts',
+        'Thomson Reuters | 6 mounts',
         'Getlinks Thailand | Present'
       ]
     }
