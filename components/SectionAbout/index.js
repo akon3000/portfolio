@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Icon } from 'semantic-ui-react'
 import { pinkPrimary } from '../../css/Colors'
 
 const TonyImage = styled('img')`
@@ -6,18 +7,9 @@ const TonyImage = styled('img')`
   height: auto;
   display: block;
   border-radius: 20px;
-`
-
-const OverlayImage = styled('div')`
-  position: absolute;
-  top: 0;
+  position: sticky;
+  top: 35px;
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  border-radius: 20px;
-  box-shadow: 40px 40px 40px 0 #000 inset,
-              -40px -40px 40px 0 #000 inset;
 `
 
 const ContentLeft = styled('div')`
@@ -36,9 +28,47 @@ const ContentRight = styled('div')`
 const TextTitle = styled('p')`
   ${pinkPrimary};
   font-size: 22px;
-  font-weight: 400;
+  font-weight: 600;
   margin-right: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 30px;
+    height: 3px;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    background-color: #EC9191;
+  }
+`
+
+const DescriptionList = styled('ul')`
+  list-style: none;
+  line-height: 1;
+  padding-left: 15px;
+  & > li {
+    display: flex;
+    & > :first-child {
+      ${pinkPrimary};
+      position: relative;
+      margin-right: 10px;
+      font-size: 6px;
+      display: flex;
+      justify-content: center;
+      &::before {
+        content: "";
+        width: 1px;
+        position: absolute;
+        top: 1px;
+        bottom: 0;
+        left: 3.4px;
+        background-color: #EC9191;
+      }
+    }
+  }
 `
 
 const BoxDetail = styled('div')`
@@ -55,38 +85,61 @@ const Wrapper = styled('section')`
               -50px -50px 50px 0 #000 inset;
 `
 
-const AboutSection = ({ profile, profile: { nickName: [ton, tony] } }) => (
-  <Wrapper id='about'>
+const AboutSection = ({ id, profile, profile: { nickName: [ton, tony] } }) => (
+  <Wrapper id={id}>
     <ContentLeft>
       <TonyImage src={profile.picture} />
-      <OverlayImage />
     </ContentLeft>
     <ContentRight>
       <BoxDetail>
-        <TextTitle>Myself</TextTitle>
+        <TextTitle>About Me</TextTitle>
         <p>
           My name is <u>Mr.{profile.firstName} {profile.lastName}</u> i am {profile.year} years old. And for my nickname you can call me <u>{ton}</u> or <u>{tony}</u>.
         </p>
       </BoxDetail>
       <BoxDetail>
-        <TextTitle>Introduce</TextTitle>
-        <ul style={{ paddingLeft: 15 }}>
+        <TextTitle>Education</TextTitle>
+        <DescriptionList>
           {
-            profile.introduces.map((introduce, index) => (
-              <li key={index}>{introduce}</li>
+            profile.educations.map((edu, index) => (
+              <li key={index}>
+                <p>
+                  <Icon name='circle' />
+                </p>
+                <p>{edu}</p>
+              </li>
             ))
           }
-        </ul>
+        </DescriptionList>
       </BoxDetail>
       <BoxDetail>
         <TextTitle>Work Experience</TextTitle>
-        <ul style={{ paddingLeft: 15 }}>
+        <DescriptionList>
           {
             profile.workExperience.map((exp, index) => (
-              <li key={index}>{exp}</li>
+              <li key={index}>
+                <p>
+                  <Icon name='circle' />
+                </p>
+                <p>
+                  <b>{exp.company}</b>
+                  <br />
+                  <small>{exp.period}</small>
+                  <br />
+                  {
+                    exp.responsibilities.map((list, idx) => (
+                      <p key={`responsibilities-${idx}`}>
+                        <small >
+                          <Icon name='minus' size='tiny' /> {list}
+                        </small>
+                      </p>
+                    ))
+                  }
+                </p>
+              </li>
             ))
           }
-        </ul>
+        </DescriptionList>
       </BoxDetail>
     </ContentRight>
   </Wrapper>
