@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Icon } from 'semantic-ui-react'
-import { pinkPrimary } from '../../css/Colors'
+import Palette from '../../css/Palette'
 
 const TonyImage = styled('img')`
   width: 100%;
@@ -26,7 +26,7 @@ const ContentRight = styled('div')`
 `
 
 const TextTitle = styled('p')`
-  ${pinkPrimary};
+  ${Palette.seaPink.toColor()};
   font-size: 22px;
   font-weight: 600;
   margin-right: 15px;
@@ -52,7 +52,7 @@ const DescriptionList = styled('ul')`
   & > li {
     display: flex;
     & > :first-child {
-      ${pinkPrimary};
+      ${Palette.seaPink.toColor()};
       position: relative;
       margin-right: 10px;
       font-size: 8px;
@@ -60,7 +60,7 @@ const DescriptionList = styled('ul')`
       justify-content: center;
       &::before {
         content: "";
-        width: 1px;
+        width: 2px;
         position: absolute;
         top: 2px;
         bottom: 0;
@@ -127,7 +127,7 @@ const AboutSection = ({ id, profile, profile: { nickName: [ton, tony] } }) => (
                 <p>
                   <Icon name='circle' />
                 </p>
-                <p style={{ paddingBottom: 20 }}>
+                <div style={{ paddingBottom: 20 }}>
                   <b>{exp.company}</b>
                   <br />
                   <small>{exp.period}</small>
@@ -141,7 +141,7 @@ const AboutSection = ({ id, profile, profile: { nickName: [ton, tony] } }) => (
                       </p>
                     ))
                   }
-                </p>
+                </div>
               </li>
             ))
           }

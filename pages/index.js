@@ -25,11 +25,25 @@ Index.getInitialProps = () => {
       ],
       workExperience: [
         {
-          company: 'D.T.C. ENTERPRISE Co.,Ltd',
-          period: '19 Jan 2015 – 1 Mar 2016, (1 year)',
+          company: 'Getlinks Thailand',
+          period: '01 April 2018 – present',
           responsibilities: [
-            'Develop web application by PHP, Node JS, jQuery, PostgreSQL and Angular JS (customer project)',
-            'Develop mobile application by Cordova framework, Node JS and Angular JS (core project)'
+            'Develop web application platform Tech talent community by Next JS framework, Express JS framework, React JS, EJS, Redux, Recompose, Style-component (core project)',
+            'Develop application platform scraping data by Python language (micro project)'
+          ]
+        },
+        {
+          company: 'Thomson Reuters',
+          period: '20 October 2017 – 20 March 2018',
+          responsibilities: [
+            'Develop pc application by Electron framework, Angular JS, Polymer, Type Script (core project)'
+          ]
+        },
+        {
+          company: 'Elite digital studio',
+          period: '03 April 2017 – 31 August 2017',
+          responsibilities: [
+            'Develop web application platform HTML Website Creation by React JS, React Router, Redux and Webpack (core project)',
           ]
         },
         {
@@ -41,25 +55,11 @@ Index.getInitialProps = () => {
           ]
         },
         {
-          company: 'Elite digital studio',
-          period: '03 April 2017 – 31 August 2017',
+          company: 'D.T.C. ENTERPRISE Co.,Ltd',
+          period: '19 Jan 2015 – 1 Mar 2016, (1 year)',
           responsibilities: [
-            'Develop web application platform HTML Website Creation by React JS, React Router, Redux and Webpack (core project)',
-          ]
-        },
-        {
-          company: 'Thomson Reuters',
-          period: '20 October 2017 – 20 March 2018',
-          responsibilities: [
-            'Develop pc application by Electron framework, Angular JS, Polymer, Type Script (core project)'
-          ]
-        },
-        {
-          company: 'Getlinks Thailand',
-          period: '01 April 2018 – present',
-          responsibilities: [
-            'Develop web application platform Tech talent community by Next JS framework, Express JS framework, React JS, EJS, Redux, Recompose, Style-component (core project)',
-            'Develop application platform scraping data by Python language (micro project)'
+            'Develop web application by PHP, Node JS, jQuery, PostgreSQL and Angular JS (customer project)',
+            'Develop mobile application by Cordova framework, Node JS and Angular JS (core project)'
           ]
         }
       ]
