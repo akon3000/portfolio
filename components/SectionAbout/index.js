@@ -52,18 +52,18 @@ const DescriptionList = styled('ul')`
   & > li {
     display: flex;
     & > :first-child {
-      color: ${palette.seaPink};
+      display: flex;
+      font-size: 8px;
       position: relative;
       margin-right: 10px;
-      font-size: 8px;
-      display: flex;
       justify-content: center;
+      color: ${palette.seaPink};
       &::before {
-        content: "";
-        width: 2px;
+        content: '';
+        width: 1px;
         position: absolute;
         top: 2px;
-        left: 3px;
+        left: 4px;
         bottom: 0;
         background-color: ${palette.seaPink};
       }
@@ -74,6 +74,19 @@ const DescriptionList = styled('ul')`
   }
   & > li:last-child > :last-child {
     padding-bottom: 0 !important;
+  }
+`
+
+const SmallPeriod = styled('small')`
+  margin: 8px 0;
+  display: block;
+  text-indent: 8px;
+`
+
+const SmallList = styled('small')`
+  display: flex;
+  & > :first-child {
+    line-height: inherit !important;
   }
 `
 
@@ -124,20 +137,19 @@ const AboutSection = ({ id, profile, profile: { nickName: [ton, tony] } }) => (
           {
             profile.workExperience.map((exp, index) => (
               <li key={index}>
-                <p>
+                <div>
                   <Icon name='circle' />
-                </p>
+                </div>
                 <div style={{ paddingBottom: 20 }}>
                   <b>{exp.company}</b>
                   <br />
-                  <small>{exp.period}</small>
-                  <br />
+                  <SmallPeriod>{exp.period}</SmallPeriod>
                   {
                     exp.responsibilities.map((list, idx) => (
                       <p key={`responsibilities-${idx}`}>
-                        <small >
-                          <Icon name='minus' size='tiny' /> {list}
-                        </small>
+                        <SmallList>
+                          <Icon name='minus' size='tiny' /> <span>{list}</span>
+                        </SmallList>
                       </p>
                     ))
                   }
