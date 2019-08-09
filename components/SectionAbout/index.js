@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Icon } from 'semantic-ui-react'
-import Palette from '../../css/Palette'
+import palette from '../../css/palette'
 
 const TonyImage = styled('img')`
   width: 100%;
@@ -26,11 +26,11 @@ const ContentRight = styled('div')`
 `
 
 const TextTitle = styled('p')`
-  ${Palette.seaPink.toColor()};
   font-size: 22px;
   font-weight: 600;
   margin-right: 15px;
   margin-bottom: 18px;
+  color: ${palette.seaPink};
   text-transform: uppercase;
   position: relative;
 
@@ -41,18 +41,18 @@ const TextTitle = styled('p')`
     position: absolute;
     left: 0;
     bottom: -5px;
-    background-color: #EC9191;
+    background-color: ${palette.seaPink};
   }
 `
 
 const DescriptionList = styled('ul')`
-  list-style: none;
   line-height: 1;
+  list-style: none;
   padding-left: 15px;
   & > li {
     display: flex;
     & > :first-child {
-      ${Palette.seaPink.toColor()};
+      color: ${palette.seaPink};
       position: relative;
       margin-right: 10px;
       font-size: 8px;
@@ -63,9 +63,9 @@ const DescriptionList = styled('ul')`
         width: 2px;
         position: absolute;
         top: 2px;
-        bottom: 0;
         left: 3px;
-        background-color: #EC9191;
+        bottom: 0;
+        background-color: ${palette.seaPink};
       }
       & > :last-child {
         padding-bottom: 20px;
@@ -82,13 +82,13 @@ const BoxDetail = styled('div')`
 `
 
 const Wrapper = styled('section')`
-  background-color: #0E1415;
-  padding: 100px;
   display: flex;
+  padding: 100px;
   flex-wrap: wrap;
   justify-content: center;
-  box-shadow: 50px 50px 50px 0 #000 inset,
-              -50px -50px 50px 0 #000 inset;
+  background-color: ${palette.bunker};
+  box-shadow: 50px 50px 50px 0 ${palette.black} inset,
+              -50px -50px 50px 0 ${palette.black} inset;
 `
 
 const AboutSection = ({ id, profile, profile: { nickName: [ton, tony] } }) => (

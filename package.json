@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "next": "^9.0.0",
+    "polished": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "semantic-ui-react": "^0.87.3",
