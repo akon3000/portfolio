@@ -1,11 +1,13 @@
 import Layout from '../components/Layout'
 import SectionHome from '../components/SectionHome'
 import SectionAbout from '../components/SectionAbout'
+import SectionSkill from '../components/SectionSkill'
 
-const Index = ({ title, urlBgHome, profile }) => (
+const Index = ({ title, urlBgHome, profile, skill }) => (
   <Layout title={title}>
     <SectionHome id='home' urlBgHome={urlBgHome} />
     <SectionAbout id='about' profile={profile} />
+    <SectionSkill id='skill' {...skill} />
   </Layout>
 )
 
@@ -63,6 +65,27 @@ Index.getInitialProps = () => {
           ]
         }
       ]
+    },
+    skill: {
+      language: {
+        title: 'Language tech',
+        skills: [
+          'PHP', 'HTML & HTML5', 'CSS', 'LESS', 'SASS', 'EJS', 'Javascript ES5 & ES6',
+          'Jquery', 'AngularJS', 'ReactJS', 'VueJS', 'Python', 'Type Script'
+        ]
+      },
+      framework: {
+        title: 'Framework',
+        skills: [
+          'NodeJS', 'ExpressJS', 'NextJS', 'Bootstrap', 'Styled-Component', 'Docker',
+          'Redux', 'Recompose', 'Grunt', 'Webpack', 'BabelJS', 'Nginx', 'Radis',
+          'Cordova', 'Material-ui', 'Graph QL'
+        ]
+      },
+      devOps: {
+        title: 'Dev Ops',
+        skills: []
+      }
     }
   }
 }
