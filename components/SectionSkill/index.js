@@ -1,17 +1,29 @@
 import styled from 'styled-components'
 import { rgba } from 'polished'
-import { Card, Icon, Grid } from 'semantic-ui-react'
+import { Grid, Divider, Button } from 'semantic-ui-react'
+import { LEVEL_COLORS } from '../../constants/skillLv'
 import palette from '../../css/palette'
 import BgImage from '../BgImage'
 
-const CardWrapper = styled('div')`
-  .card {
-    background-color: ${rgba(palette.bunker, 0.7)};
-    .header, .meta, .description, .extra {
-      color: #FFF !important;
-    }
-    .extra {
-      border-top: solid 1px #FFF !important;
+const SkillTitle = styled('h2')`
+  font-size: 30px;
+  margin-bottom: 20px;
+`
+
+const SkillLabel = styled('label')`
+  color: ${palette.white};
+`
+
+const ContentSkill = styled('div')`
+  position: relative;
+  .ui.buttons {
+    margin: 5px;
+    & > .skill {
+      color: ${palette.white};
+      background: ${palette.bastille};
+      &:hover {
+        background: ${rgba(palette.bastille, 0.2)};
+      }
     }
   }
 `
@@ -19,67 +31,74 @@ const CardWrapper = styled('div')`
 const Wrapper = styled('section')`
   position: relative;
   padding: 100px;
-  z-index: 1;
-  background-color: ${palette.bunker};
-  box-shadow: 50px 50px 50px 0 ${palette.black} inset,
-              -50px -50px 50px 0 ${palette.black} inset;
 `
 
-const SkillSection = ({ id, language, framework, devOps }) => (
+const SkillSection = ({ id, bg, language, framework, sql, other }) => (
   <Wrapper id={id}>
-    <BgImage
-      opacity={0.5}
-      featherColor='#000'
-      src='https://cdnb.artstation.com/p/assets/images/images/007/904/679/large/faiz-azhar-alfamart.jpg?1509273936'
-    />
-    <Grid columns='equal'>
-        <Grid.Column computer={8}>
-          <CardWrapper>
-            <Card
-              fluid
-              header={language.title}
-              description={language.skills.join(', ')}
-              extra={
-                <>
-                  <Icon name='html5' />
-                  {language.skills.length}
-                </>
-              }
-            />
-          </CardWrapper>
-        </Grid.Column>
-        <Grid.Column computer={8}>
-          <CardWrapper>
-            <Card
-              fluid
-              header={framework.title}
-              description={framework.skills.join(', ')}
-              extra={
-                <>
-                  <Icon name='code' />
-                  {framework.skills.length}
-                </>
-              }
-            />
-          </CardWrapper>
-        </Grid.Column>
-        <Grid.Column computer={8}>
-          <CardWrapper>
-            <Card
-              fluid
-              meta='skill'
-              header={devOps.title}
-              description={devOps.skills.join(', ')}
-              extra={
-                <>
-                  <Icon name='jenkins' />
-                  {devOps.skills.length}
-                </>
-              }
-            />
-          </CardWrapper>
-        </Grid.Column>
-    </Grid>
+    <BgImage src={bg} featherColor={palette.black} />
+    <ContentSkill>
+      <Grid>
+        <Grid.Row>
+          <Grid.Column computer={7}>
+            <SkillTitle>{language.title}</SkillTitle>
+            {
+              language.skills.map((skill, index) => (
+                <Button.Group key={index} size='mini'>
+                  <Button className='skill'>{skill.name}</Button>
+                  <Button.Or text='LV' />
+                  <Button color={LEVEL_COLORS[skill.lv]} inverted>{skill.lv}</Button>
+                </Button.Group>
+              ))
+            }
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column computer={7} floated='right'>
+            <SkillTitle>{framework.title}</SkillTitle>
+            {
+              framework.skills.map((skill, index) => (
+                <Button.Group key={index} size='mini'>
+                  <Button className='skill'>{skill.name}</Button>
+                  <Button.Or text='LV' />
+                  <Button color={LEVEL_COLORS[skill.lv]} inverted>{skill.lv}</Button>
+                </Button.Group>
+              ))
+            }
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column computer={7}>
+            <SkillTitle>{sql.title}</SkillTitle>
+            {
+              sql.skills.map((skill, index) => (
+                <Button.Group key={index} size='mini'>
+                  <Button className='skill'>{skill.name}</Button>
+                  <Button.Or text='LV' />
+                  <Button color={LEVEL_COLORS[skill.lv]} inverted>{skill.lv}</Button>
+                </Button.Group>
+              ))
+            }
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row>
+          <Grid.Column computer={7} floated='right'>
+            <SkillTitle>{other.title}</SkillTitle>
+            {
+              other.skills.map((skill, index) => (
+                <Button.Group key={index} size='mini'>
+                  <Button className='skill'>{skill.name}</Button>
+                  <Button.Or text='LV' />
+                  <Button color={LEVEL_COLORS[skill.lv]} inverted>{skill.lv}</Button>
+                </Button.Group>
+              ))
+            }
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
+      <Divider vertical>
+        <SkillLabel>Skills</SkillLabel>
+      </Divider>
+    </ContentSkill>
   </Wrapper>
 )
 

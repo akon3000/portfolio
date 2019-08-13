@@ -3,18 +3,22 @@ import SectionHome from '../components/SectionHome'
 import SectionAbout from '../components/SectionAbout'
 import SectionSkill from '../components/SectionSkill'
 
-const Index = ({ title, urlBgHome, profile, skill }) => (
+import { BASIC, MEDIUM, STRONG } from '../constants/skillLv'
+
+const Index = ({ title, bgHome, bgAbout, bgSkills, profile, skill }) => (
   <Layout title={title}>
-    <SectionHome id='home' urlBgHome={urlBgHome} />
-    <SectionAbout id='about' profile={profile} />
-    <SectionSkill id='skill' {...skill} />
+    <SectionHome id='home' bg={bgHome} />
+    <SectionAbout id='about' bg={bgAbout} profile={profile} />
+    <SectionSkill id='skill' bg={bgSkills} {...skill} />
   </Layout>
 )
 
 Index.getInitialProps = () => {
   return {
     title: 'Portfolio | TINNAPOP SURAPHON',
-    urlBgHome: '/static/image/section-home-bg.jpg',
+    bgHome: '/static/image/section-home-bg.jpg',
+    bgAbout: '/static/image/section-about-bg.jpg',
+    bgSkills: '/static/image/section-skill-bg.jpg',
     profile: {
       firstName: 'Tinnapop',
       lastName: 'Suraphon',
@@ -68,25 +72,69 @@ Index.getInitialProps = () => {
     },
     skill: {
       language: {
-        title: 'Language tech',
+        title: 'LANGUAGE TECH',
         skills: [
-          'PHP', 'HTML & HTML5', 'CSS', 'LESS', 'SASS', 'EJS', 'Javascript ES5 & ES6',
-          'Jquery', 'AngularJS', 'ReactJS', 'VueJS', 'Python', 'Type Script'
+          { name: 'HTML & HTML5', lv: STRONG },
+          { name: 'Javascript ES5 & ES6', lv: STRONG },
+          { name: 'ReactJS', lv: STRONG },
+          { name: 'CSS', lv: STRONG },
+          { name: 'SASS', lv: STRONG },
+          { name: 'LESS', lv: STRONG },
+          { name: 'Jquery', lv: MEDIUM },
+          { name: 'AngularJS v1', lv: MEDIUM },
+          { name: 'PHP', lv: BASIC },
+          { name: 'EJS', lv: BASIC },
+          { name: 'VueJS', lv: BASIC }, 
+          { name: 'Python', lv: BASIC },
+          { name: 'Type Script', lv: BASIC },
         ]
       },
       framework: {
-        title: 'Framework',
+        title: 'FRAMEWORK',
         skills: [
-          'NodeJS', 'ExpressJS', 'NextJS', 'Bootstrap', 'Styled-Component', 'Docker',
-          'Redux', 'Recompose', 'Grunt', 'Webpack', 'BabelJS', 'Nginx', 'Radis',
-          'Cordova', 'Material-ui', 'Graph QL'
+          { name: 'Node JS', lv: STRONG },
+          { name: 'Express JS', lv: STRONG },
+          { name: 'Next JS', lv: STRONG },
+          { name: 'Bootstrap', lv: STRONG },
+          { name: 'styled-component', lv: STRONG },
+          { name: 'Redux', lv: STRONG },
+          { name: 'Recompose', lv: MEDIUM },
+          { name: 'Material-ui', lv: MEDIUM },
+          { name: 'Webpack', lv: MEDIUM },
+          { name: 'Babel JS', lv: MEDIUM },
+          { name: 'PM2', lv: MEDIUM },
+          { name: 'Docker', lv: BASIC },
+          { name: 'Grunt', lv: BASIC },
+          { name: 'Nginx', lv: BASIC },
+          { name: 'Radis', lv: BASIC },
+          { name: 'Cordova', lv: BASIC },
+          { name: 'Graph QL', lv: BASIC },
+          { name: 'electron', lv: BASIC },
+          { name: 'Mocha', lv: BASIC }
         ]
       },
-      devOps: {
-        title: 'Dev Ops',
-        skills: []
+      sql: {
+        title: 'SQL',
+        skills: [
+          { name: 'MySQL', lv: MEDIUM },
+          { name: 'PostgreSQL', lv: MEDIUM },
+          { name: 'MongoDB', lv: BASIC },
+        ]
+      },
+      other: {
+        title: 'Other',
+        skills: [
+          { name: 'Git tools', lv: STRONG },
+          { name: 'Photoshop', lv: MEDIUM },
+          { name: 'Window os', lv: STRONG },
+          { name: 'Linux os', lv: MEDIUM },
+          { name: 'Mac os', lv: MEDIUM },
+          { name: 'Thai language', lv: STRONG },
+          { name: 'English language', lv: MEDIUM },
+        ]
       }
     }
+
   }
 }
 

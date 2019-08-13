@@ -19,7 +19,7 @@ const Wrapper = styled('section')`
   ${({ contentHeight }) => css`height: ${contentHeight}px;`}
 `
 
-const HomeSection = ({ id, urlBgHome }) => {
+const HomeSection = ({ id, bg }) => {
   const [contentHeight, setContentHeight] = useState(1080)
 
   useEffect(() => {
@@ -30,8 +30,8 @@ const HomeSection = ({ id, urlBgHome }) => {
   return (
     <Wrapper id={id} contentHeight={contentHeight}>
       <BgImage
+        src={bg}
         opacity={0.5}
-        src={urlBgHome}
         featherColor='#000'
       />
       <HeadText>Tony - Portfolio</HeadText>
