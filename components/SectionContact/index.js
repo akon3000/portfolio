@@ -10,7 +10,9 @@ const ContactSection = ({ id }) => (
   <Wrapper id={id}>
     <BgImage
       isFeatherTop
+      isFeatherLeft
       isFeatherRight
+      isFeatherBottom
     />
   </Wrapper>
 )
