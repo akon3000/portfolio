@@ -37,8 +37,10 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
   <Wrapper id={id}>
     <BgImage
       img={bg}
-      opacity={0.4}
+      opacity={0.6}
       isFeatherTop
+      isFeatherLeft
+      isFeatherRight
       isFeatherBottom
     />
     <ContentSkill>
