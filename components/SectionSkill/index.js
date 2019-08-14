@@ -35,7 +35,11 @@ const Wrapper = styled('section')`
 
 const SkillSection = ({ id, bg, language, framework, sql, other }) => (
   <Wrapper id={id}>
-    <BgImage src={bg} featherColor={palette.black} />
+    <BgImage
+      img={bg}
+      isFeatherLeft
+      isFeatherRight
+    />
     <ContentSkill>
       <Grid>
         <Grid.Row>

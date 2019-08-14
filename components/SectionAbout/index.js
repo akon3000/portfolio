@@ -110,8 +110,10 @@ const Wrapper = styled('section')`
 const AboutSection = ({ id, bg, profile, profile: { nickName: [ton, tony] } }) => (
   <Wrapper id={id}>
     <BgImage
-      src={bg}
-      featherColor={palette.black}
+      img={bg}
+      opacity={0.6}
+      isFeatherLeft
+      isFeatherRight
     />
     <ContentLeft>
       <TonyImage src={profile.picture} />

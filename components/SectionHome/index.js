@@ -30,9 +30,11 @@ const HomeSection = ({ id, bg }) => {
   return (
     <Wrapper id={id} contentHeight={contentHeight}>
       <BgImage
-        src={bg}
+        img={bg}
         opacity={0.5}
-        featherColor='#000'
+        isFeatherLeft
+        isFeatherRight
+        isFeatherBottom
       />
       <HeadText>Tony - Portfolio</HeadText>
       <HeadSubText>I am <u>Front-End</u> developer. Currently i'm working with NodeJs,React (Main)</HeadSubText>
