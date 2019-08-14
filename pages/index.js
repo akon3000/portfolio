@@ -2,6 +2,7 @@ import Layout from '../components/Layout'
 import SectionHome from '../components/SectionHome'
 import SectionAbout from '../components/SectionAbout'
 import SectionSkill from '../components/SectionSkill'
+import SectionContact from '../components/SectionContact'
 
 import { BASIC, MEDIUM, STRONG } from '../constants/skillLv'
 
@@ -10,6 +11,7 @@ const Index = ({ title, bgHome, bgAbout, bgSkills, profile, skill }) => (
     <SectionHome id='home' bg={bgHome} />
     <SectionAbout id='about' bg={bgAbout} profile={profile} />
     <SectionSkill id='skill' bg={bgSkills} {...skill} />
+    <SectionContact id='contact' />
   </Layout>
 )
 

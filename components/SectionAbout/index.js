@@ -111,9 +111,8 @@ const AboutSection = ({ id, bg, profile, profile: { nickName: [ton, tony] } }) =
   <Wrapper id={id}>
     <BgImage
       img={bg}
+      opacity={0.2}
       isFeatherTop
-      isFeatherLeft
-      isFeatherRight
       isFeatherBottom
     />
     <ContentLeft>

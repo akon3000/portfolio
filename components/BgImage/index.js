@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import palette from '../../css/palette'
 
 const Feather = styled('div')`
@@ -33,11 +33,14 @@ const Wrapper = styled('div')`
   right: 0;
   bottom: 0;
   z-index: -1;
-  background: url(${({ img }) => img});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  background-color: ${palette.bunker};
   opacity: ${({ opacity = 1 }) => opacity};
+  ${({ img }) => img && css`
+    background: url(${img});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  `}
 `
 
 const BgImage = ({

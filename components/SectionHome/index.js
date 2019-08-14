@@ -32,8 +32,6 @@ const HomeSection = ({ id, bg }) => {
       <BgImage
         img={bg}
         opacity={0.5}
-        isFeatherLeft
-        isFeatherRight
         isFeatherBottom
       />
       <HeadText>Tony - Portfolio</HeadText>
