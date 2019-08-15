@@ -6,12 +6,12 @@ import SectionContact from '../components/SectionContact'
 
 import { BASIC, MEDIUM, STRONG } from '../constants/skillLv'
 
-const Index = ({ title, bgHome, bgAbout, bgSkills, profile, skill }) => (
+const Index = ({ title, bgHome, bgAbout, bgSkills, bgContact, profile, skill }) => (
   <Layout title={title}>
     <SectionHome id='home' bg={bgHome} />
     <SectionAbout id='about' bg={bgAbout} profile={profile} />
     <SectionSkill id='skill' bg={bgSkills} {...skill} />
-    <SectionContact id='contact' />
+    <SectionContact id='contact' bg={bgContact} />
   </Layout>
 )
 
@@ -21,6 +21,7 @@ Index.getInitialProps = () => {
     bgHome: '/static/image/section-home-bg.jpg',
     bgAbout: '/static/image/section-about-bg.jpg',
     bgSkills: '/static/image/section-skill-bg.jpg',
+    bgContact: '/static/image/section-contact-bg.png',
     profile: {
       firstName: 'Tinnapop',
       lastName: 'Suraphon',

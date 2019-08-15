@@ -12,6 +12,7 @@ export const bulletList = {
   [WORK_EXAMPLE]: WORK_EXAMPLE,
   [FOOTER]: FOOTER,
 }
-export const paddingLeftRight = 50
+export const paddingLeft = 50
+export const paddingRight = 30
 export const bulletSize = 16
-export const headerSize = (paddingLeftRight * 2) + bulletSize
+export const headerSize = (paddingLeft + paddingRight) + bulletSize

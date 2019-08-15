@@ -32,7 +32,6 @@ const HomeSection = ({ id, bg }) => {
       <BgImage
         img={bg}
         opacity={0.5}
-        isFeatherTop
         isFeatherLeft
         isFeatherRight
       />

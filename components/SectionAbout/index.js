@@ -112,7 +112,6 @@ const AboutSection = ({ id, bg, profile, profile: { nickName: [ton, tony] } }) =
     <BgImage
       img={bg}
       opacity={0.4}
-      isFeatherTop
       isFeatherLeft
       isFeatherRight
     />

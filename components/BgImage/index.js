@@ -44,29 +44,32 @@ const Wrapper = styled('div')`
   z-index: -1;
   background-color: ${palette.bunker};
   opacity: ${({ opacity = 1 }) => opacity};
-  ${({ img }) => img && css`
+  ${({ img, bgPosition = 'center center' }) => img && css`
     background: url(${img});
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: ${bgPosition};
   `};
 `
 
 const BgImage = ({
   img,
   opacity,
+  bgPosition,
   colorFeather,
   isFeatherTop,
   isFeatherLeft,
   isFeatherRight,
   isFeatherBottom,
 }) => (
-  <Wrapper img={img} opacity={opacity}>
+  <Wrapper img={img} opacity={opacity} bgPosition={bgPosition}>
     {isFeatherTop && <FeatherTop color={colorFeather} />}
     {isFeatherLeft && <FeatherLeft color={colorFeather} />}
     {isFeatherRight && <FeatherRight color={colorFeather} />}
-    {isFeatherBottom && <FeatherBottom color={colorFeather} />}
-    <ImageBottom src='/static/image/cover-bg-image.png' />
+    {isFeatherBottom
+      ? <FeatherBottom color={colorFeather} />
+      : <ImageBottom src='/static/image/cover-bg-image.png' />
+    }
   </Wrapper>
 )
 

@@ -6,13 +6,13 @@ const Wrapper = styled('section')`
   padding: 100px;
 `
 
-const ContactSection = ({ id }) => (
+const ContactSection = ({ id, bg }) => (
   <Wrapper id={id}>
     <BgImage
-      isFeatherTop
+      img={bg}
       isFeatherLeft
       isFeatherRight
-      isFeatherBottom
+      bgPosition='top center'
     />
   </Wrapper>
 )

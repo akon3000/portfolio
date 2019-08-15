@@ -38,7 +38,6 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
     <BgImage
       img={bg}
       opacity={0.6}
-      isFeatherTop
       isFeatherLeft
       isFeatherRight
     />
