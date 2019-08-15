@@ -117,7 +117,7 @@ Index.getInitialProps = () => {
         ]
       },
       sql: {
-        title: 'SQL',
+        title: 'DATABASE',
         skills: [
           { name: 'MySQL', lv: MEDIUM },
           { name: 'PostgreSQL', lv: MEDIUM },
@@ -125,7 +125,7 @@ Index.getInitialProps = () => {
         ]
       },
       other: {
-        title: 'Other',
+        title: 'OTHER',
         skills: [
           { name: 'Git tools', lv: STRONG },
           { name: 'Photoshop', lv: MEDIUM },
