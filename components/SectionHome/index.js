@@ -32,9 +32,9 @@ const HomeSection = ({ id, bg }) => {
       <BgImage
         img={bg}
         opacity={0.5}
+        isFeatherTop
         isFeatherLeft
         isFeatherRight
-        isFeatherBottom
       />
       <HeadText>Tony - Portfolio</HeadText>
       <HeadSubText>I am <u>Front-End</u> developer. Currently i'm working with NodeJs,React (Main)</HeadSubText>

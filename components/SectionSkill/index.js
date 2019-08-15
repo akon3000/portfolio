@@ -41,7 +41,6 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
       isFeatherTop
       isFeatherLeft
       isFeatherRight
-      isFeatherBottom
     />
     <ContentSkill>
       <Grid>

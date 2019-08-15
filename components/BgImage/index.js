@@ -26,6 +26,15 @@ const FeatherBottom = styled(Feather)`
   box-shadow: inset 0 -50px 25px -25px ${({ color = palette.black }) => color};
 `
 
+const ImageBottom = styled('img')`
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+`
+
 const Wrapper = styled('div')`
   position: absolute;
   top: 0;
@@ -40,7 +49,7 @@ const Wrapper = styled('div')`
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-  `}
+  `};
 `
 
 const BgImage = ({
@@ -57,6 +66,7 @@ const BgImage = ({
     {isFeatherLeft && <FeatherLeft color={colorFeather} />}
     {isFeatherRight && <FeatherRight color={colorFeather} />}
     {isFeatherBottom && <FeatherBottom color={colorFeather} />}
+    <ImageBottom src='/static/image/cover-bg-image.png' />
   </Wrapper>
 )
 
