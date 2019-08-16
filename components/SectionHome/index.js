@@ -25,7 +25,7 @@ const HomeSection = ({ id, bg }) => {
   useEffect(() => {
     setContentHeight(window.innerHeight)
     document.addEventListener('resize', () => setContentHeight(window.innerHeight))
-  })
+  }, [])
 
   return (
     <Wrapper id={id} contentHeight={contentHeight}>

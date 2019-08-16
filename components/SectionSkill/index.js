@@ -16,6 +16,7 @@ const SkillLabel = styled('label')`
 
 const ContentSkill = styled('div')`
   position: relative;
+  margin-top: 70px;
   .ui.buttons {
     margin: 5px;
     & > .skill {
@@ -37,7 +38,6 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
   <Wrapper id={id}>
     <BgImage
       img={bg}
-      opacity={0.6}
       isFeatherLeft
       isFeatherRight
     />

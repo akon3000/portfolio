@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { Icon } from 'semantic-ui-react'
 import palette from '../../css/palette'
-import BgImage from '../BgImage'
 
 const TonyImage = styled('img')`
   width: 100%;
@@ -102,19 +101,13 @@ const Wrapper = styled('section')`
   position: relative;
   z-index: 1;
   justify-content: center;
-  background-color: ${palette.bunker};
+  background-color: ${palette.black};
   box-shadow: 50px 50px 50px 0 ${palette.black} inset,
               -50px -50px 50px 0 ${palette.black} inset;
 `
 
 const AboutSection = ({ id, bg, profile, profile: { nickName: [ton, tony] } }) => (
   <Wrapper id={id}>
-    <BgImage
-      img={bg}
-      opacity={0.4}
-      isFeatherLeft
-      isFeatherRight
-    />
     <ContentLeft>
       <TonyImage src={profile.picture} />
     </ContentLeft>

@@ -2,30 +2,30 @@ import Layout from '../components/Layout'
 import SectionHome from '../components/SectionHome'
 import SectionAbout from '../components/SectionAbout'
 import SectionSkill from '../components/SectionSkill'
-import SectionContact from '../components/SectionContact'
+import SectionWorkExamples from '../components/SectionWorkExamples'
 
 import { BASIC, MEDIUM, STRONG } from '../constants/skillLv'
 
-const Index = ({ title, bgHome, bgAbout, bgSkills, bgContact, profile, skill }) => (
+const Index = ({ title, bgHome, bgAbout, bgSkills, bgContact, profile, skill, workExamples }) => (
   <Layout title={title}>
     <SectionHome id='home' bg={bgHome} />
     <SectionAbout id='about' bg={bgAbout} profile={profile} />
     <SectionSkill id='skill' bg={bgSkills} {...skill} />
-    <SectionContact id='contact' bg={bgContact} />
+    <SectionWorkExamples id='work-example' bg={bgContact} workExamples={workExamples} />
   </Layout>
 )
 
 Index.getInitialProps = () => {
   return {
     title: 'Portfolio | TINNAPOP SURAPHON',
-    bgHome: '/static/image/section-home-bg.jpg',
-    bgAbout: '/static/image/section-about-bg.jpg',
-    bgSkills: '/static/image/section-skill-bg.jpg',
-    bgContact: '/static/image/section-contact-bg.png',
+    bgHome: '/static/image/section-00-bg.jpg',
+    bgAbout: '',
+    bgSkills: '/static/image/section-01-bg.png',
+    bgContact: '/static/image/section-02-bg.jpg',
     profile: {
       firstName: 'Tinnapop',
       lastName: 'Suraphon',
-      picture: '/static/image/section-about-tony.jpg',
+      picture: '/static/image/tony.jpg',
       year: 27,
       nickName: ['Ton', 'Tony'],
       educations: [
@@ -75,7 +75,7 @@ Index.getInitialProps = () => {
     },
     skill: {
       language: {
-        title: 'LANGUAGE TECH',
+        title: 'LANGUAGE',
         skills: [
           { name: 'HTML & HTML5', lv: STRONG },
           { name: 'Javascript ES5 & ES6', lv: STRONG },
@@ -136,8 +136,65 @@ Index.getInitialProps = () => {
           { name: 'English language', lv: MEDIUM },
         ]
       }
+    },
+    workExamples: {
+      thumbnailWidth: '300 XS100 LA400 XL500',
+      thumbnailHeight: 'auto',
+      thumbnailHoverEffect2: 'scale120',
+      thumbnailDisplayTransition: 'slideUp',
+      thumbnailDisplayTransitionDuration: 1000,
+      itemsBaseURL: 'https://cdna.artstation.com/p/assets/images/images',
+      viewerToolbar: {
+        standard: 'minimizeButton',
+        minimized: 'minimizeButton, downloadButton, fullscreenButton'
+      },
+      items: [
+        {
+          src: '/019/036/497/large/alena-aenami-2.jpg?1561726443',
+          srct: '/019/036/497/large/alena-aenami-2.jpg?1561726443'
+        },
+        {
+          src: '/002/078/419/large/alena-aenami-forest-beast1900.jpg?1456935568',
+          srct: '/002/078/419/large/alena-aenami-forest-beast1900.jpg?1456935568'
+        },
+        {
+          src: '/012/136/679/large/alena-aenami-003.jpg?1533216279',
+          srct: '/012/136/679/large/alena-aenami-003.jpg?1533216279'
+        },
+        {
+          src: '/001/793/794/large/alena-aenami-revenant2-2-1.jpg?1452811928',
+          srct: '/001/793/794/large/alena-aenami-revenant2-2-1.jpg?1452811928'
+        },
+        {
+          src: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905',
+          srct: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905'
+        },
+        {
+          src: '/019/821/937/large/su-jian-190720-20190806-102434-20190806-175119.jpg?1565146472',
+          srct: '/019/821/937/large/su-jian-190720-20190806-102434-20190806-175119.jpg?1565146472'
+        },
+        {
+          src: '/019/036/497/large/alena-aenami-2.jpg?1561726443',
+          srct: '/019/036/497/large/alena-aenami-2.jpg?1561726443'
+        },
+        {
+          src: '/002/078/419/large/alena-aenami-forest-beast1900.jpg?1456935568',
+          srct: '/002/078/419/large/alena-aenami-forest-beast1900.jpg?1456935568'
+        },
+        {
+          src: '/012/136/679/large/alena-aenami-003.jpg?1533216279',
+          srct: '/012/136/679/large/alena-aenami-003.jpg?1533216279'
+        },
+        {
+          src: '/001/793/794/large/alena-aenami-revenant2-2-1.jpg?1452811928',
+          srct: '/001/793/794/large/alena-aenami-revenant2-2-1.jpg?1452811928'
+        },
+        {
+          src: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905',
+          srct: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905'
+        }
+      ]
     }
-
   }
 }
 

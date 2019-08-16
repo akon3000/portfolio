@@ -52,7 +52,13 @@ class AppDocument extends Document {
 
           {/* <link rel='shortcut icon' href='favicon.ico' /> */}
 
+          {/** Stylesheet third party */}
           <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css' />
+          <link rel='stylesheet' href='//unpkg.com/nanogallery2@2.4.2/dist/css/nanogallery2.min.css' />
+
+          {/** Javascript third party */}
+          <script type='text/javascript' src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js' />
+          <script type='text/javascript' src='//unpkg.com/nanogallery2@2.4.2/dist/jquery.nanogallery2.min.js' />
 
         </Head>
         <body>
