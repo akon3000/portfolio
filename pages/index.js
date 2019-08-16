@@ -3,15 +3,17 @@ import SectionHome from '../components/SectionHome'
 import SectionAbout from '../components/SectionAbout'
 import SectionSkill from '../components/SectionSkill'
 import SectionWorkExamples from '../components/SectionWorkExamples'
+import SectionFooter from '../components/SectionFooter'
 
 import { BASIC, MEDIUM, STRONG } from '../constants/skillLv'
 
-const Index = ({ title, bgHome, bgAbout, bgSkills, bgContact, profile, skill, workExamples }) => (
+const Index = ({ title, bgHome, bgAbout, bgSkills, bgContact, profile, skill, workExamples, footer }) => (
   <Layout title={title}>
     <SectionHome id='home' bg={bgHome} />
     <SectionAbout id='about' bg={bgAbout} profile={profile} />
     <SectionSkill id='skill' bg={bgSkills} {...skill} />
     <SectionWorkExamples id='work-example' bg={bgContact} workExamples={workExamples} />
+    <SectionFooter id='footer' {...footer} />
   </Layout>
 )
 
@@ -142,7 +144,7 @@ Index.getInitialProps = () => {
       thumbnailHeight: 'auto',
       thumbnailHoverEffect2: 'scale120',
       thumbnailDisplayTransition: 'slideUp',
-      thumbnailDisplayTransitionDuration: 1000,
+      thumbnailDisplayTransitionDuration: 3000,
       itemsBaseURL: 'https://cdna.artstation.com/p/assets/images/images',
       viewerToolbar: {
         standard: 'minimizeButton',
@@ -194,6 +196,13 @@ Index.getInitialProps = () => {
           srct: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905'
         }
       ]
+    },
+    footer: {
+      facebook: 'https://www.facebook.com/AlcatrazArmy',
+      instagram: 'https://www.instagram.com/t0no0',
+      line: '@z.3lz.gg',
+      mail: 'vonmane001@gmail.com',
+      phone: '099-4947771'
     }
   }
 }

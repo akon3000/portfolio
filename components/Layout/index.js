@@ -3,7 +3,7 @@ import Head from 'next/head'
 import GlobalStyle from '../../css/GlobalStyle'
 import Header from './Header'
 
-import { bulletList, HOME, ABOUT, SKILL, CONTACT, WORK_EXAMPLE, FOOTER } from '../../constants/header'
+import { bulletList, HOME, ABOUT, SKILL, WORK_EXAMPLE, FOOTER } from '../../constants/header'
 
 const Layout = ({ children, title }) => {
 
@@ -37,12 +37,6 @@ const Layout = ({ children, title }) => {
     const skillSection = document.querySelector(SKILL)
     if (skillSection && window.scrollY <= skillSection.offsetTop) {
       setActiveSection(SKILL)
-      return
-    }
-
-    const contactSection = document.querySelector(CONTACT)
-    if (contactSection && window.scrollY <= contactSection.offsetTop) {
-      setActiveSection(CONTACT)
       return
     }
     
