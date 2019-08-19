@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
+import screen from '../../css/screen'
 import palette from '../../css/palette'
 import BgImage from '../BgImage'
 
 const HeadText = styled('h1')`
   font-size: 60px;
+  @media ${screen.MOBILE_L} {
+    font-size: 40px;
+  }
 `
 
 const HeadSubText = styled('h3')`
@@ -20,6 +24,12 @@ const Wrapper = styled('section')`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  @media ${screen.MOBILE_L} {
+    text-align: center;
+    padding: 20px;
+  }
+
   ${({ contentHeight }) => css`height: ${contentHeight}px;`}
 `
 

@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 import { bulletList, bulletSize, paddingLeft, paddingRight } from '../../constants/header'
+import screen from '../../css/screen'
 import Portal from '../Portal'
 
 const BulletLink = styled('a')`
@@ -32,6 +33,11 @@ const Wrapper = styled('header')`
   bottom: 0;
   z-index: 999999;
   padding: 0 ${paddingRight}px 0 ${paddingLeft}px;
+
+  @media ${screen.TABLET} {
+    display: none;
+  }
+
 `
 
 const Header = ({ activeSection, onSelectBullet }) => (

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import { headerSize } from '../../constants/header'
+import screen from '../screen'
 import palette from '../palette'
 
 const GlobalStyle = createGlobalStyle`
@@ -19,6 +20,9 @@ const GlobalStyle = createGlobalStyle`
     padding-left: ${headerSize}px;
     background-color: ${palette.black};
     font-family: 'icomoon', sans-serif;
+    @media ${screen.TABLET} {
+      padding-left: 0;
+    }
   }
 
   h1, h2, h3, h4, h5, h6,
