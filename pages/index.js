@@ -141,60 +141,34 @@ Index.getInitialProps = () => {
     },
     workExamples: {
       thumbnailWidth: '300 XS100 LA400 XL500',
-      thumbnailHeight: 'auto',
+      thumbnailHeight: '200 XS80 LA250 XL350',
       thumbnailHoverEffect2: 'scale120',
       thumbnailDisplayTransition: 'slideUp',
       thumbnailDisplayTransitionDuration: 3000,
-      itemsBaseURL: 'https://cdna.artstation.com/p/assets/images/images',
+      itemsBaseURL: '/static/image',
       viewerToolbar: {
         standard: 'minimizeButton',
         minimized: 'minimizeButton, downloadButton, fullscreenButton'
       },
       items: [
-        {
-          src: '/019/036/497/large/alena-aenami-2.jpg?1561726443',
-          srct: '/019/036/497/large/alena-aenami-2.jpg?1561726443'
-        },
-        {
-          src: '/002/078/419/large/alena-aenami-forest-beast1900.jpg?1456935568',
-          srct: '/002/078/419/large/alena-aenami-forest-beast1900.jpg?1456935568'
-        },
-        {
-          src: '/012/136/679/large/alena-aenami-003.jpg?1533216279',
-          srct: '/012/136/679/large/alena-aenami-003.jpg?1533216279'
-        },
-        {
-          src: '/001/793/794/large/alena-aenami-revenant2-2-1.jpg?1452811928',
-          srct: '/001/793/794/large/alena-aenami-revenant2-2-1.jpg?1452811928'
-        },
-        {
-          src: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905',
-          srct: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905'
-        },
-        {
-          src: '/019/821/937/large/su-jian-190720-20190806-102434-20190806-175119.jpg?1565146472',
-          srct: '/019/821/937/large/su-jian-190720-20190806-102434-20190806-175119.jpg?1565146472'
-        },
-        {
-          src: '/019/036/497/large/alena-aenami-2.jpg?1561726443',
-          srct: '/019/036/497/large/alena-aenami-2.jpg?1561726443'
-        },
-        {
-          src: '/002/078/419/large/alena-aenami-forest-beast1900.jpg?1456935568',
-          srct: '/002/078/419/large/alena-aenami-forest-beast1900.jpg?1456935568'
-        },
-        {
-          src: '/012/136/679/large/alena-aenami-003.jpg?1533216279',
-          srct: '/012/136/679/large/alena-aenami-003.jpg?1533216279'
-        },
-        {
-          src: '/001/793/794/large/alena-aenami-revenant2-2-1.jpg?1452811928',
-          srct: '/001/793/794/large/alena-aenami-revenant2-2-1.jpg?1452811928'
-        },
-        {
-          src: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905',
-          srct: '/018/592/008/large/valentin-petrov-mirror-sc04.jpg?1559935905'
-        }
+        { src: '/work-00.png', srct: '/work-00.png' },
+        { src: '/work-04.png', srct: '/work-04.png' },
+        { src: '/work-05.png', srct: '/work-05.png' },
+        { src: '/work-06.png', srct: '/work-06.png' },
+        { src: '/work-07.png', srct: '/work-07.png' },
+        { src: '/work-08.png', srct: '/work-08.png' },
+        { src: '/work-09.png', srct: '/work-09.png' },
+        { src: '/work-10.png', srct: '/work-10.png' },
+        { src: '/work-11.jpg', srct: '/work-11.jpg' },
+        { src: '/work-12.jpg', srct: '/work-12.jpg' },
+        { src: '/work-13.jpg', srct: '/work-13.jpg' },
+        { src: '/work-14.jpg', srct: '/work-14.jpg' },
+        { src: '/work-02.png', srct: '/work-02.png' },
+        { src: '/work-03.png', srct: '/work-03.png' },
+        { src: '/work-01.png', srct: '/work-01.png' },
+        { src: '/work-17.jpg', srct: '/work-17.jpg' },
+        { src: '/work-15.jpg', srct: '/work-15.jpg' },
+        { src: '/work-16.jpg', srct: '/work-16.jpg' }
       ]
     },
     footer: {
