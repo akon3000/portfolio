@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { rgba } from 'polished'
 import { Grid, Divider, Button } from 'semantic-ui-react'
 import { LEVEL_COLORS } from '../../constants/skillLv'
+import screen from '../../css/screen'
 import palette from '../../css/palette'
 import BgImage from '../BgImage'
 
@@ -16,7 +17,7 @@ const SkillLabel = styled('label')`
 
 const ContentSkill = styled('div')`
   position: relative;
-  margin-top: 70px;
+  margin-top: 100px;
   .ui.buttons {
     margin: 5px;
     & > .skill {
@@ -27,11 +28,21 @@ const ContentSkill = styled('div')`
       }
     }
   }
+  @media ${screen.MOBILE_L} {
+    margin-top: 170px;
+  }
 `
 
 const Wrapper = styled('section')`
   position: relative;
   padding: 100px;
+
+  @media ${screen.TABLET} {
+    padding: 20px;
+    .ui.divider {
+      display: none;
+    }
+  }
 `
 
 const SkillSection = ({ id, bg, language, framework, sql, other }) => (
@@ -44,7 +55,7 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
     <ContentSkill>
       <Grid>
         <Grid.Row>
-          <Grid.Column computer={7}>
+          <Grid.Column tablet={16} computer={7}>
             <SkillTitle>{language.title}</SkillTitle>
             {
               language.skills.map((skill, index) => (
@@ -58,7 +69,7 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column computer={7} floated='right'>
+          <Grid.Column tablet={16} computer={7} floated='right'>
             <SkillTitle>{framework.title}</SkillTitle>
             {
               framework.skills.map((skill, index) => (
@@ -72,7 +83,7 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column computer={7}>
+          <Grid.Column tablet={16} computer={7}>
             <SkillTitle>{sql.title}</SkillTitle>
             {
               sql.skills.map((skill, index) => (
@@ -86,7 +97,7 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
           </Grid.Column>
         </Grid.Row>
         <Grid.Row>
-          <Grid.Column computer={7} floated='right'>
+          <Grid.Column tablet={16} computer={7} floated='right'>
             <SkillTitle>{other.title}</SkillTitle>
             {
               other.skills.map((skill, index) => (

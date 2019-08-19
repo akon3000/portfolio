@@ -1,10 +1,15 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
+import screen from '../../css/screen'
 import BgImage from '../BgImage'
 
 const Wrapper = styled('section')`
   position: relative;
   padding: 100px;
+
+  @media ${screen.MOBILE_L} {
+    padding: 20px;
+  }
 `
 
 const ContactSection = ({ id, bg, workExamples }) => {

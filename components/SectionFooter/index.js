@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { rgba } from 'polished' 
-import { Icon, Divider, Grid } from 'semantic-ui-react'
+import { Icon, Divider } from 'semantic-ui-react'
+import screen from '../../css/screen'
 import palette from '../../css/palette'
 
 const ListItem = styled('div')`
@@ -40,6 +41,10 @@ const Wrapper = styled('div')`
   position: relative;
   text-align: center;
   color: ${palette.white};
+
+  @media ${screen.MOBILE_L} {
+    padding: 20px;
+  }
 `
 
 const FooterSection = ({ id, facebook, instagram, line, mail, phone }) => (

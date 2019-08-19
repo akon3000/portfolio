@@ -19,11 +19,20 @@ const ContentLeft = styled('div')`
   min-width: 350px;
   border-radius: 20px;
   margin-bottom: 40px;
+
+  @media ${screen.MOBILE_S} {
+    width: 300px;
+    min-width: 300px;
+  }
 `
 
 const ContentRight = styled('div')`
   width: 500px;
   padding: 0 40px;
+  @media ${screen.MOBILE_L} {
+    width: 300px;
+    padding: 0;
+  }
 `
 
 const TextTitle = styled('p')`
