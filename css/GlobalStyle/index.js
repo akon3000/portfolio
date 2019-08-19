@@ -34,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
   ::-webkit-scrollbar-thumb {
     height: 50px;
     border-radius: 4px;
-    background-color: ${palette.seaPink};
+    background-color: ${palette.white};
   }
   ::-webkit-scrollbar {
       width: 6px;
