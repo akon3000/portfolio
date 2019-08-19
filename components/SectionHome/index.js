@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
+import palette from '../../css/palette'
 import BgImage from '../BgImage'
 
 const HeadText = styled('h1')`
@@ -8,6 +9,9 @@ const HeadText = styled('h1')`
 
 const HeadSubText = styled('h3')`
   font-weight: 300;
+  u {
+    color: ${palette.seaPink};
+  }
 `
 
 const Wrapper = styled('section')`
@@ -36,9 +40,9 @@ const HomeSection = ({ id, bg }) => {
         isFeatherRight
       />
       <HeadText>Tony - Portfolio</HeadText>
-      <HeadSubText>I am <u>Front-End</u> developer. Currently i'm working with NodeJs,React (Main)</HeadSubText>
+      <HeadSubText>I am <u>web</u> developer. Creator of platform website application.</HeadSubText>
       <HeadSubText>...</HeadSubText>
-      <HeadSubText>But for <u>Back-End</u> & <u>Dev-ops</u> i can do some framework.</HeadSubText>
+      <HeadSubText><u>Coding</u> is letting go of fear.</HeadSubText>
     </Wrapper>
   )
 }
