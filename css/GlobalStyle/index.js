@@ -30,6 +30,19 @@ const GlobalStyle = createGlobalStyle`
   p {
     margin: 0;
   }
+
+  ::-webkit-scrollbar-thumb {
+    height: 50px;
+    border-radius: 4px;
+    background-color: ${palette.seaPink};
+  }
+  ::-webkit-scrollbar {
+      width: 6px;
+    } 
+  ::-webkit-scrollbar-track {
+    border-radius: 3px;
+    background-color: ${palette.bunker};
+  }
 `
 
 export default GlobalStyle
