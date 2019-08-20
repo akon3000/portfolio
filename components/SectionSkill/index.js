@@ -37,11 +37,14 @@ const Wrapper = styled('section')`
   position: relative;
   padding: 100px;
 
-  @media ${screen.TABLET} {
-    padding: 20px;
+  @media (max-width: 991px) {
     .ui.divider {
       display: none;
     }
+  }
+
+  @media ${screen.TABLET} {
+    padding: 20px;
   }
 `
 
@@ -50,7 +53,6 @@ const SkillSection = ({ id, bg, language, framework, sql, other }) => (
     <BgImage
       img={bg}
       isFeatherLeft
-      isFeatherRight
     />
     <ContentSkill>
       <Grid>

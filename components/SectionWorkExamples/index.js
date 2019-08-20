@@ -7,14 +7,20 @@ const Wrapper = styled('section')`
   position: relative;
   padding: 100px;
 
+  #images-work {
+    margin-bottom: 150px;
+  }
+
   @media ${screen.MOBILE_L} {
     padding: 20px;
   }
 `
 
-const ContactSection = ({ id, bg, workExamples }) => {
+const WorkExampleSection = ({ id, bg, workExamples }) => {
 
-  useEffect(() => jQuery('#images-work').nanogallery2(workExamples), [])
+  useEffect(() => {
+    jQuery('#images-work').nanogallery2(workExamples)
+  })
 
   return (
     <Wrapper id={id}>
@@ -23,11 +29,10 @@ const ContactSection = ({ id, bg, workExamples }) => {
         opacity={0.6}
         isFeatherTop
         isFeatherLeft
-        isFeatherRight
       />
       <div id='images-work' />
     </Wrapper>
   )
 }
 
-export default ContactSection
+export default WorkExampleSection

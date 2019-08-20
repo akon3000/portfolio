@@ -1,3 +1,5 @@
+import { BASIC, MEDIUM, STRONG } from '../constants/skillLv'
+import { HOME, ABOUT, SKILL, WORK_EXAMPLE, FOOTER } from '../constants/header'
 import Layout from '../components/Layout'
 import SectionHome from '../components/SectionHome'
 import SectionAbout from '../components/SectionAbout'
@@ -5,15 +7,23 @@ import SectionSkill from '../components/SectionSkill'
 import SectionWorkExamples from '../components/SectionWorkExamples'
 import SectionFooter from '../components/SectionFooter'
 
-import { BASIC, MEDIUM, STRONG } from '../constants/skillLv'
-
-const Index = ({ title, bgHome, bgAbout, bgSkills, bgContact, profile, skill, workExamples, footer }) => (
+const Index = ({ 
+  title,
+  bgHome,
+  bgAbout,
+  bgSkills,
+  bgContact,
+  profile,
+  skill,
+  workExamples,
+  footer
+}) => (
   <Layout title={title}>
-    <SectionHome id='home' bg={bgHome} />
-    <SectionAbout id='about' bg={bgAbout} profile={profile} />
-    <SectionSkill id='skill' bg={bgSkills} {...skill} />
-    <SectionWorkExamples id='work-example' bg={bgContact} workExamples={workExamples} />
-    <SectionFooter id='footer' {...footer} />
+    <SectionHome id={HOME} bg={bgHome} />
+    <SectionAbout id={ABOUT} bg={bgAbout} profile={profile} />
+    <SectionSkill id={SKILL} bg={bgSkills} {...skill} />
+    <SectionWorkExamples id={WORK_EXAMPLE} bg={bgContact} workExamples={workExamples} />
+    <SectionFooter id={FOOTER} {...footer} />
   </Layout>
 )
 

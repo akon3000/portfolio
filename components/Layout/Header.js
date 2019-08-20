@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
+import { rgba } from 'polished'
 import { bulletList, bulletSize, paddingLeft, paddingRight } from '../../constants/header'
 import screen from '../../css/screen'
+import palette from '../../css/palette'
 import Portal from '../Portal'
 
 const BulletLink = styled('a')`
@@ -9,13 +11,13 @@ const BulletLink = styled('a')`
   margin: 15px 2px;
   cursor: pointer;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: ${rgba(palette.white, 0.2)};
   ${({ isActive }) => isActive && css`
     width: ${bulletSize}px;
     height: ${bulletSize}px;
     border: 0;
     margin: 15px 0;
-    background-color: #FFF;
+    background-color: ${palette.white};
   `}
 `
 
@@ -48,8 +50,8 @@ const Header = ({ activeSection, onSelectBullet }) => (
           Object.keys(bulletList).map(type => (
             <BulletLink
               key={type}
+              isActive={activeSection === type}
               onClick={() => onSelectBullet(type)}
-              isActive={activeSection === bulletList[type]}
             />
           ))
         }

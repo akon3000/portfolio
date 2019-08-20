@@ -47,7 +47,6 @@ const HomeSection = ({ id, bg }) => {
         img={bg}
         opacity={0.5}
         isFeatherLeft
-        isFeatherRight
       />
       <HeadText>Tony - Portfolio</HeadText>
       <HeadSubText>I am <u>web</u> developer. Creator of platform website application.</HeadSubText>

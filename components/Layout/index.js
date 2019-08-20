@@ -22,31 +22,31 @@ const Layout = ({ children, title }) => {
 
   const handleWindowScroll = () => {
 
-    const homeSection = document.querySelector(HOME)
+    const homeSection = document.querySelector(bulletList[HOME])
     if (homeSection && window.scrollY <= homeSection.offsetTop) {
       setActiveSection(HOME)
       return
     }
 
-    const aboutSection = document.querySelector(ABOUT)
+    const aboutSection = document.querySelector(bulletList[ABOUT])
     if (aboutSection && window.scrollY <= aboutSection.offsetTop) {
       setActiveSection(ABOUT)
       return
     }
 
-    const skillSection = document.querySelector(SKILL)
+    const skillSection = document.querySelector(bulletList[SKILL])
     if (skillSection && window.scrollY <= skillSection.offsetTop) {
       setActiveSection(SKILL)
       return
     }
     
-    const workExampleSection = document.querySelector(WORK_EXAMPLE)
+    const workExampleSection = document.querySelector(bulletList[WORK_EXAMPLE])
     if (workExampleSection && window.scrollY <= workExampleSection.offsetTop) {
       setActiveSection(WORK_EXAMPLE)
       return
     }
 
-    const footerSection = document.querySelector(FOOTER)
+    const footerSection = document.querySelector(bulletList[FOOTER])
     if (footerSection && window.scrollY <= footerSection.offsetTop) {
       setActiveSection(FOOTER)
       return

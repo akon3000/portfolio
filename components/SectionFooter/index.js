@@ -36,7 +36,7 @@ const ContactBox = styled('div')`
   }
 `
 
-const Wrapper = styled('div')`
+const Wrapper = styled('section')`
   padding: 100px;
   position: relative;
   text-align: center;
